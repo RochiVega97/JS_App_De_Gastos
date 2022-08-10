@@ -4,43 +4,79 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
     <title>App de gastos compartidos</title>
   </head>
+
   <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">               
-                <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">                                    
-                    <div class="p-3 mb-2 bg-primary bg-gradient fw-bold text-white">App de gastos</div>
-                    <form>
-                        <div class="col-md-4 position-relative">
-                            <label for="nombre" class="form-label" >Nombre</label>
-                            <input type="text" class="form-control" id="nombre">
-                        </div>
-                         <div class="col-md-4 position-relative">
-                            <label  class="form-label" >Gastos</label>
-                            <input type="number" class="form-control" id="gasto">
-                            
-                        </div>
-                        <div class="col-md-4 position-relative">
-                          <label  class="form-label" >Descripcion del Gasto</label>
-                          <input type="text" class="form-control" id="desc">
-                      </div>                                                     
-                        <div class="col-12">
-                        <input class="btn btn-secondary fw-bold float-end" value="Enviar" onclick="sumbit()"></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="resultados" id="containerList" >
-                    <div>
-                      <ul class="list-group" id="listResult"></ul>
-                    </div>
-                    <div class="m-3 text-st" id="comment"></div>
-                  </div>
-            </div>
-        </div>
+    <header class="navbar">
+      <div class="navmenu">
+          <i class="fas fa-bars" id="menu"></i>
+          <img src="images/tripy.png" alt="tripy logo" title="tripy logo">
+      </div>
+    </header>
+    <div class="showmenu" id="showmenu">
+
+      <div class="topbox">
+          <a href="javascript:void(0)" class="crossmenu" onclick="closeNav()">&times;</a>
+          <img src="images/calc.png" alt="calculator image">
+          <div class="topboxtext">
+              <h2>Tripy</h2>
+              <h4>split your trip bill</h4>
+          </div>
+      </div>
+      <div class="menuitems">
+          <a href="pages/team.html" target="_blank" id="team"><i class="fas fa-users"></i> team</a>
+          <a href="pages/about.html" target="_blank" id="about"><i class="fas fa-star"></i> about</a>
+          <a href="pages/feedback.html" target="_blank" id="feedback"><i class="fas fa-code"></i> site feedback</a>
+      </div>
     </div>
-   
+
+    <section class="inputTotal">
+      <div class="container">
+          <div class="row">
+              <div class="col">               
+                  <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">                                    
+                      <div class="p-3 mb-2 bg-primary bg-gradient fw-bold text-white">App de gastos</div>
+                      
+                      <form>
+                          <div class="col-md-4 position-relative">
+                              <label for="nombre" class="form-label" >Nombre</label>
+                              <input type="text" class="form-control" id="nombre">
+                          </div>
+                          <div class="col-md-4 position-relative">
+                              <label  class="form-label" >Gastos</label>
+                              <input type="number" class="form-control" id="gasto">
+                              
+                          </div>
+                          <div class="col-md-4 position-relative">
+                            <label  class="form-label" >Descripcion del Gasto</label>
+                            <input type="text" class="form-control" id="desc">
+                        </div>                                                     
+                          <div class="col-12">
+                          <input class="btn btn-secondary fw-bold float-end" value="Enviar" onclick="sumbit()"></button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="resultados" id="containerList" >
+                      <div>
+                        <ul class="list-group" id="listResult"></ul>
+                      </div>
+                      <div class="m-3 text-st" id="comment"></div>
+                    </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
     <script src="VegaRocio.js"></script>
     </body>
  

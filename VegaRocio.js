@@ -1,3 +1,20 @@
+var showmenu = document.getElementById("showmenu");
+var menu = document.getElementById("menu");
+
+document.getElementById("mypayments").style.display = "none";
+
+
+
+menu.onclick = function () {
+    document.getElementById("showmenu").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("showmenu").style.width = "0px";
+}
+
+
+
 const arr = [];
 const List = document.getElementById("listResult")
 const Result = document.getElementById("comments")
@@ -37,3 +54,4 @@ function sumbit() {
     console.log(suma)
     printComment()
 }
+
