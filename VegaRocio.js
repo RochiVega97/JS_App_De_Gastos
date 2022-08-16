@@ -1,7 +1,6 @@
 var showmenu = document.getElementById("showmenu");
 var menu = document.getElementById("menu");
 
-document.getElementById("mypayments").style.display = "none";
 
 
 
