@@ -17,22 +17,6 @@
   </head>
 
   <body>
-    <header class="navbar">
-      <div class="navmenu">
-          <i class="fas fa-bars" id="menu"></i>
-      </div>
-    </header>
-    <div class="showmenu" id="showmenu">
-
-      <div class="topbox">
-          <a href="javascript:void(0)" class="crossmenu" onclick="closeNav()">&times;</a>
-      </div>
-      <div class="menuitems">
-          <a href="pages/team.html" target="_blank" id="team"><i class="fas fa-users"></i> team</a>
-          <a href="pages/about.html" target="_blank" id="about"><i class="fas fa-star"></i> about</a>
-          <a href="pages/feedback.html" target="_blank" id="feedback"><i class="fas fa-code"></i> site feedback</a>
-      </div>
-    </div>
 
     <section class="inputTotal">
       <div class="container">
@@ -42,35 +26,36 @@
                       <div class="p-3 mb-2 bg-primary bg-gradient fw-bold text-white">App de gastos</div>
                       
                       <form id="IdForm">
-                          <div class="col-md-4 position-relative">
+                          <div class="mb-3">
                               <label for="nombre" class="form-label" >Nombre</label>
                               <input type="text" class="form-control" id="nombre">
                           </div>
-                          <div class="col-md-4 position-relative">
-                              <label  class="form-label" >Gastos</label>
+                          <div class="mb-3">
+                              <label for="gasto" class="form-label" >Costo</label>
                               <input type="number" class="form-control" id="gasto">
                               
                           </div>
-                          <div class="col-md-4 position-relative">
-                            <label  class="form-label" >Descripcion del Gasto</label>
+                          <div class="mb-3">
+                            <label  for="des" class="form-label" >Descripcion del Gasto</label>
                             <input type="text" class="form-control" id="desc">
-                        </div>                                                     
-                          <div class="col-12">
-                          <input class="btn btn-secondary fw-bold float-end" value="Enviar" onclick="sumbit()"></button>
-                          </div>
+                          </div>                                                     
+                          
+                        <button type="submit" class="btn btn-secondary">Enviar Gasto</button>
+                          
                       </form>
-                  </div>
+                  </div><br><br>
+                  
                   <div class="resultados" id="containerList" >
-                      <div>
-                        <ul class="list-group" id="listResult"></ul>
-                      </div>
-                      <div class="m-3 text-st" id="comment"></div>
-                    </div>
+                    <button id="botonGastos" class="btn btn-secondary">Mostrar Gastos</button><br><br>
+                    <div id="listResult" class="row"></div>
+                      
+                    <div class="m-3 text-st" id="comment"></div>
+                  </div>
               </div>
           </div>
       </div>
     </section>
 
     <script src="VegaRocio.js"></script>
-    </body>
+  </body>
  
