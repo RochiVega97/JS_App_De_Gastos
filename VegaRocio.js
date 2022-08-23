@@ -17,22 +17,16 @@ function splitBills(Montos) {
 const idForm=document.getElementById("IdForm")
 const List = document.getElementById("listResult")
 const botonMostrar=document.getElementById("botonGastos")
-const gastos = []
+let gastos = []
+
 idForm.addEventListener('submit', (event)=>{
     event.preventDefault()
-    const names = document.getElementById("nombre").value
-    const value = document.getElementById("gasto").value
-    const descripcion_gasto = document.getElementById("desc").value
-
+    let names = document.getElementById("nombre").value
+    let value = document.getElementById("gasto").value
+    let descripcion_gasto = document.getElementById("desc").value
     gastos.push([names,parseFloat(value),descripcion_gasto])
-
-
     idForm.reset()
     console.log(gastos)
-
-})
-
-botonMostrar.addEventListener('click', ()=>{
     let newList = document.createElement("li")
 
     for (i of gastos){
@@ -47,13 +41,12 @@ botonMostrar.addEventListener('click', ()=>{
         </div>
         ` 
         List.appendChild(newList)
+        splitBills(gastos)
+        console.log(suma)
+        printComment()
     }
 
-    
-
-
-    //splitBills(gastos)
-    //console.log(suma)
-    //printComment()
 
 })
+
+
