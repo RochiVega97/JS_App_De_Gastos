@@ -55,6 +55,7 @@ idForm.addEventListener('submit', (event)=>{
     idForm.reset()
     console.log(gastos)
     let newList = document.createElement("li")
+    newList.innerHTML =""
 
     for (i of gastos){
         newList.innerHTML = `
@@ -64,6 +65,7 @@ idForm.addEventListener('submit', (event)=>{
                 <h5 class="card-title">${i[0]}</h5>
                 <p class="card-text">Gasto: ${i[1]}</p>
                 <p class="card-text">Detalle: ${i[2]}</p>
+                <a href="#" class="btn btn-danger">Eliminar Gastos</a>
             </div>
         </div>
         ` 
@@ -73,7 +75,7 @@ idForm.addEventListener('submit', (event)=>{
         printComment()
     }
     localStorage.setItem('gastosStorage',JSON.stringify(gastos))
-    console.log(JSON.parse(localStorage.getItem("gastosStorage")))
+    gastoStorage=(JSON.parse(localStorage.getItem("gastosStorage")))
 
 })
 
