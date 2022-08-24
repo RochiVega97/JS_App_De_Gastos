@@ -1,5 +1,32 @@
 
 let newComment = document.createElement("p")
+const botonLightMode=document.getElementById("botonLightMode")
+const botonDarkMode=document.getElementById("botonDarkMode")
+
+let darkMode
+if(localStorage.getItem('darkMode')){
+    darkMode=localStorage.getItem("darkMode")
+}else{
+    localStorage.setItem('darkMode','light')
+}
+
+if(darkMode=='dark'){
+    document.body.classList.add('darkMode')
+}
+
+botonDarkMode.addEventListener('click',()=>{
+    document.body.classList.add('darkMode')
+    localStorage.setItem("darkMode","dark")
+
+})
+
+
+botonLightMode.addEventListener('click',()=>{
+    document.body.classList.remove('darkMode')
+    localStorage.setItem("darkMode","light")
+
+    
+})
 
 function printComment() {
     newComment.innerHTML = '<p style="background-color: #D3DEDC; padding-left:16px;">Total: $' + suma + '<br> A cada uno le toca: $' + Valores +'</p>'

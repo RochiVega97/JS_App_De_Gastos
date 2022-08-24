@@ -6,9 +6,17 @@
     overflow-x: hidden;
 }
 
-body {
+.body {
     background-color: rgb(235, 235, 240);
     font-family: 'Roboto', sans-serif;
+    color:black;
+    transition: 1s ease;
+}
+.darkMode {
+    background-color:black ;
+    font-family: 'Roboto', sans-serif;
+    color:rgb(235, 235, 240);
+
 }
 
 .navbar {
@@ -16,7 +24,7 @@ body {
     position: fixed;
     background-color: #6998da;
     padding: 10px;
-    color: #f3f3f3;
+    color: black;
 }
 
 .navbar .navmenu {
@@ -68,7 +76,7 @@ body {
     padding: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #f3f3f3;
+    color: black;
 
 }
 
@@ -91,7 +99,7 @@ body {
 }
 
 .showmenu .crossmenu:hover {
-    color: #c30202;
+    color: black;
 }
 
 .showmenu .menuitems {
@@ -106,7 +114,7 @@ body {
 
 .showmenu .menuitems a {
     padding: 15px;
-    color: #062c3f;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
@@ -115,7 +123,7 @@ body {
 }
 
 .showmenu .menuitems a:hover {
-    color: #c30202;
+    color: black;
     background-color: #f6f6f6;
 }
 
@@ -192,7 +200,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 20px;
-    color: #f3f3f3;
+    color: black;
     font-weight: 700;
     background: rgb(16, 121, 173);
     background: linear-gradient(249deg, rgba(16, 121, 173, 1) 0%, rgba(105, 152, 218, 1) 100%);
@@ -211,7 +219,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 20px;
-    color: #f3f3f3;
+    color: black;
     font-weight: 700;
     background: rgb(16, 121, 173);
     background: linear-gradient(249deg, rgba(16, 121, 173, 1) 0%, rgba(105, 152, 218, 1) 100%);
@@ -232,7 +240,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 20px;
-    color: #f3f3f3;
+    color: black;
     font-weight: 700;
     background: #26d826;
 }
@@ -274,7 +282,6 @@ body {
     margin-left: 20px;
 }
 
-.midme .btn {}
 
 #closethescreen {
     font-size: 32px;
@@ -308,7 +315,6 @@ body {
     left: 0;
     background: #fff;
     border-radius: 30%;
-    -webkit-animation: move12 5s infinite;
 }
 
 .bar12 .circle12 p {
