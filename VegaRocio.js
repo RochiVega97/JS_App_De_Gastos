@@ -72,7 +72,8 @@ idForm.addEventListener('submit', (event)=>{
         console.log(suma)
         printComment()
     }
-
+    localStorage.setItem('gastosStorage',JSON.stringify(gastos))
+    console.log(JSON.parse(localStorage.getItem("gastosStorage")))
 
 })
 
