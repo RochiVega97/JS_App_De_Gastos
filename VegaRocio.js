@@ -1,7 +1,65 @@
+class claseGastos{
+    constructor(nombre, costo, descripcion){
+        this.nombre=nombre
+        this.costo=costo
+        this.descripcion=descripcion
+    }
+    imprimirEnConsola() {
+        console.log(`${this.nombre} ${this.gasto} ${this.descripcion}`)
+      }
+}
+let gastos_array=[]
+
+if(localStorage.getItem('gastos_array')){
+    gastos_array= JSON.parse(localStorage.getItem('gastos_array'))
+}else{
+    localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+}
+const idForm=document.getElementById("IdForm")
+const List = document.getElementById("listResult")
+const botonMostrar=document.getElementById("botonGastos")
 
 let newComment = document.createElement("p")
 const botonLightMode=document.getElementById("botonLightMode")
 const botonDarkMode=document.getElementById("botonDarkMode")
+
+idForm.addEventListener('submit', (event)=>{
+    event.preventDefault()
+    const datForm= new FormData(event.target)
+
+    const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto"),datForm.get("desc"))
+    gastos_array.push(spend)
+    idForm.reset()
+    localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+
+    console.log(gastos_array)
+
+    let newList = document.createElement("li")
+    newList.innerHTML =""
+
+    for (i of gastos){
+        newList.innerHTML = `
+        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${i[0]}: \$${i[1]} \ ${i[2]}</li>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${i[0]}</h5>
+                <p class="card-text">Gasto: ${i[1]}</p>
+                <p class="card-text">Detalle: ${i[2]}</p>
+                <a href="#" class="btn btn-danger">Eliminar Gastos</a>
+            </div>
+        </div>
+        ` 
+        List.appendChild(newList)
+        splitBills(gastos)
+        console.log(suma)
+        printComment()
+    }
+
+    localStorage.setItem('gastosStorage',JSON.stringify(gastos))
+    gastoStorage=(JSON.parse(localStorage.getItem("gastosStorage")))
+
+})
+
 
 let darkMode
 if(localStorage.getItem('darkMode')){
@@ -41,42 +99,9 @@ function splitBills(Montos) {
         return Valores, suma
 }
 
-const idForm=document.getElementById("IdForm")
-const List = document.getElementById("listResult")
-const botonMostrar=document.getElementById("botonGastos")
+
 let gastos = []
 
-idForm.addEventListener('submit', (event)=>{
-    event.preventDefault()
-    let names = document.getElementById("nombre").value
-    let value = document.getElementById("gasto").value
-    let descripcion_gasto = document.getElementById("desc").value
-    gastos.push([names,parseFloat(value),descripcion_gasto])
-    idForm.reset()
-    console.log(gastos)
-    let newList = document.createElement("li")
-    newList.innerHTML =""
 
-    for (i of gastos){
-        newList.innerHTML = `
-        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${i[0]}: \$${i[1]} \ ${i[2]}</li>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${i[0]}</h5>
-                <p class="card-text">Gasto: ${i[1]}</p>
-                <p class="card-text">Detalle: ${i[2]}</p>
-                <a href="#" class="btn btn-danger">Eliminar Gastos</a>
-            </div>
-        </div>
-        ` 
-        List.appendChild(newList)
-        splitBills(gastos)
-        console.log(suma)
-        printComment()
-    }
-    localStorage.setItem('gastosStorage',JSON.stringify(gastos))
-    gastoStorage=(JSON.parse(localStorage.getItem("gastosStorage")))
-
-})
 
 
