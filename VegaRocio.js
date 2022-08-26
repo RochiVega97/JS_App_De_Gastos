@@ -29,37 +29,35 @@ idForm.addEventListener('submit', (event)=>{
 
     const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto"),datForm.get("desc"))
     gastos_array.push(spend)
-    idForm.reset()
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+    idForm.reset()
 
     console.log(gastos_array)
+})
 
-    let newList = document.createElement("li")
-    newList.innerHTML =""
+botonMostrarGastos.addEventListener('click',()=>{
+    const gastosStorage=JSON.parse(localStorage.getItem('gastos_array'))
 
-    for (i of gastos){
-        newList.innerHTML = `
-        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${i[0]}: \$${i[1]} \ ${i[2]}</li>
-        <div class="card" style="width: 18rem;">
+    List.innerHTML =""
+    gastosStorage.forEach((gastosStorage,indice) => {
+        List.innerHTML = `
+        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${gastosStorage.name}: \$${gastosStorage.gasto} \ ${gastosStorage.desc}</li>
+        <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
             <div class="card-body">
-                <h5 class="card-title">${i[0]}</h5>
-                <p class="card-text">Gasto: ${i[1]}</p>
-                <p class="card-text">Detalle: ${i[2]}</p>
-                <a href="#" class="btn btn-danger">Eliminar Gastos</a>
+                <h5 class="card-title">${gastosStorage.name}</h5>
+                <p class="card-text">Gasto: ${gastosStorage.gasto}</p>
+                <p class="card-text">Detalle: ${gastosStorage.desc}</p>
+                <button class="btn btn-danger">Eliminar</button>
             </div>
         </div>
         ` 
-        List.appendChild(newList)
-        splitBills(gastos)
+        splitBills(gastosStorage)
         console.log(suma)
         printComment()
-    }
 
-    localStorage.setItem('gastosStorage',JSON.stringify(gastos))
-    gastoStorage=(JSON.parse(localStorage.getItem("gastosStorage")))
-
+        
+    });
 })
-
 
 let darkMode
 if(localStorage.getItem('darkMode')){
