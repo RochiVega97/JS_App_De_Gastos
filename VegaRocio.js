@@ -35,10 +35,10 @@ idForm.addEventListener('submit', (event)=>{
 
 botonMostrarGastos.addEventListener('click',()=>{
     const gastosStor=JSON.parse(localStorage.getItem('gastos_array'))
-
-    List.innerHTML =""
+    let newList = document.createElement("li")
+    newList.innerHTML =""
     gastosStor.forEach((gastos,indice) => {
-        List.innerHTML = `
+        newList.innerHTML = `
         <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${gastos.nombre}: \$${gastos.costo} \ ${gastos.descripcion}</li>
         <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
             <div class="card-body">
@@ -49,6 +49,7 @@ botonMostrarGastos.addEventListener('click',()=>{
             </div>
         </div>
         ` 
+        List.appendChild(newList)
         //splitBills(gastos_array)
         //console.log(suma)
         //printComment()
