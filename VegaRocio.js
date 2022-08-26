@@ -31,29 +31,27 @@ idForm.addEventListener('submit', (event)=>{
     gastos_array.push(spend)
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
     idForm.reset()
-
-    console.log(gastos_array)
 })
 
 botonMostrarGastos.addEventListener('click',()=>{
-    const gastosStorage=JSON.parse(localStorage.getItem('gastos_array'))
+    const gastosStor=JSON.parse(localStorage.getItem('gastos_array'))
 
     List.innerHTML =""
-    gastosStorage.forEach((gastosStorage,indice) => {
+    gastosStor.forEach((gastos,indice) => {
         List.innerHTML = `
-        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${gastosStorage.name}: \$${gastosStorage.gasto} \ ${gastosStorage.desc}</li>
+        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${gastos.nombre}: \$${gastos.costo} \ ${gastos.descripcion}</li>
         <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
             <div class="card-body">
-                <h5 class="card-title">${gastosStorage.name}</h5>
-                <p class="card-text">Gasto: ${gastosStorage.gasto}</p>
-                <p class="card-text">Detalle: ${gastosStorage.desc}</p>
+                <h5 class="card-title">${gastos.nombre}</h5>
+                <p class="card-text">Gasto: ${gastos.costo}</p>
+                <p class="card-text">Detalle: ${gastos.descripcion}</p>
                 <button class="btn btn-danger">Eliminar</button>
             </div>
         </div>
         ` 
-        splitBills(gastosStorage)
-        console.log(suma)
-        printComment()
+        //splitBills(gastos_array)
+        //console.log(suma)
+        //printComment()
 
         
     });
