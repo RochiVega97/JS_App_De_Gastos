@@ -48,21 +48,26 @@ botonMostrarGastos.addEventListener('click',()=>{
             </div>
         </div>
         ` 
-        //splitBills(gastos_array)
-        //console.log(suma)
-        //printComment()  
+        splitBills(parseInt(gastos.costo))
+        console.log(suma)
+    
     });
     
+    printComment()
     gastosStor.forEach((gastos,indice) => {
         const tarjetaGasto= document.getElementById(`gasto${indice}`)
         tarjetaGasto.children[0].children[3].addEventListener('click',()=>{
+            restaGasto(parseInt(gastos.costo))
+            printComment()
             tarjetaGasto.remove()
             gastos_array.splice(indice,1)
             localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+
         })
     })
+    
 })
-
+  
 
 let darkMode
 if(localStorage.getItem('darkMode')){
@@ -86,22 +91,28 @@ botonLightMode.addEventListener('click',()=>{
     document.body.classList.remove('darkMode')
     localStorage.setItem("darkMode","light")
 
-    
 })
 
+
+suma = 0
+cont=0
+Valores=0
+function splitBills(Montos) {
+    suma = suma + Montos
+    cont++
+    Valores = suma / cont
+    return Valores, suma
+}
+function restaGasto(Montos) {
+    suma = suma - Montos
+    cont=cont-1
+    Valores = suma / cont
+    return Valores, suma
+}
 function printComment() {
     newComment.innerHTML = '<p style="background-color: #D3DEDC; padding-left:16px;">Total: $' + suma + '<br> A cada uno le toca: $' + Valores +'</p>'
     List.appendChild(newComment)
 }
-function splitBills(Montos) {
-    suma = 0;
-        for (let Valor of Montos){
-            suma = suma + Valor[1]  ;
-        }
-        Valores = suma / (gastos.length);
-        return Valores, suma
-}
-
 
 let gastos = []
 
