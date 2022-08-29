@@ -10,11 +10,9 @@ class claseGastos{
 }
 let gastos_array=[]
 
-if(localStorage.getItem('gastos_array')){
-    gastos_array= JSON.parse(localStorage.getItem('gastos_array'))
-}else{
-    localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
-}
+(localStorage.getItem('gastos_array')) ? gastos_array= JSON.parse(localStorage.getItem('gastos_array')) : localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+
+
 const idForm=document.getElementById("IdForm")
 const List = document.getElementById("listResult")
 const botonMostrar=document.getElementById("botonGastos")
