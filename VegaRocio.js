@@ -70,11 +70,8 @@ botonMostrarGastos.addEventListener('click',()=>{
   
 
 let darkMode
-if(localStorage.getItem('darkMode')){
-    darkMode=localStorage.getItem("darkMode")
-}else{
-    localStorage.setItem('darkMode','light')
-}
+(localStorage.getItem('darkMode'))? darkMode=localStorage.getItem("darkMode"): localStorage.setItem('darkMode','light')
+
 
 if(darkMode=='dark'){
     document.body.classList.add('darkMode')
