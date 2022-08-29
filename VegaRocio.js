@@ -50,13 +50,12 @@ botonMostrarGastos.addEventListener('click',()=>{
         ` 
         //splitBills(gastos_array)
         //console.log(suma)
-        //printComment()
-
-        
+        //printComment()  
     });
+    
     gastosStor.forEach((gastos,indice) => {
         const tarjetaGasto= document.getElementById(`gasto${indice}`)
-        console.log(tarjetaGasto.children[1])
+        console.log(tarjetaGasto.children[0].children[3])
     })
 })
 
