@@ -26,8 +26,8 @@ const botonDarkMode=document.getElementById("botonDarkMode")
 idForm.addEventListener('submit', (event)=>{
     event.preventDefault()
     const datForm= new FormData(event.target)
-
     const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto"),datForm.get("desc"))
+   
     gastos_array.push(spend)
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
     idForm.reset()
