@@ -38,7 +38,7 @@ botonMostrarGastos.addEventListener('click',()=>{
     List.innerHTML =""
     gastosStor.forEach((gastos,indice) => {
         List.innerHTML += `
-        <li class="list-group-item bg-primary bg-gradient fw-bold text-white" style="background-color: blue">${gastos.nombre}: \$${gastos.costo} \ ${gastos.descripcion}</li>
+        
         <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
             <div class="card-body">
                 <h5 class="card-title">${gastos.nombre}</h5>
@@ -55,7 +55,11 @@ botonMostrarGastos.addEventListener('click',()=>{
     
     gastosStor.forEach((gastos,indice) => {
         const tarjetaGasto= document.getElementById(`gasto${indice}`)
-        console.log(tarjetaGasto.children[0].children[3])
+        tarjetaGasto.children[0].children[3].addEventListener('click',()=>{
+            tarjetaGasto.remove()
+            gastos_array.splice(indice,1)
+            localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
+        })
     })
 })
 
