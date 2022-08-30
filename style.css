@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 4;
+    padding: 4;
     overflow-x: hidden;
 }
 
@@ -15,117 +15,9 @@
 .darkMode {
     background-color:black ;
     font-family: 'Roboto', sans-serif;
-    color:rgb(235, 235, 240);
-
+    color:rgb(235, 235, 240)
 }
 
-.navbar {
-    width: 100%;
-    position: fixed;
-    background-color: #6998da;
-    padding: 10px;
-    color: black;
-}
-
-.navbar .navmenu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 5px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.navbar .navmenu img {
-    width: 150px;
-}
-
-.navbar .navmenu i {
-    font-size: 24px;
-    padding: 10px;
-    margin-right: 20px;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-.navbar .navmenu i:hover {
-    background-color: #7bb1fd;
-    border-radius: 10px;
-}
-
-.navbar .navmenu h1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 800;
-}
-
-.showmenu {
-    height: 100%;
-    position: fixed;
-    background-color: #fff;
-    width: 0px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-
-}
-
-.showmenu .topbox {
-    background-color: #6998da;
-    padding: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    color: black;
-
-}
-
-.showmenu .topbox img {
-    width: 120px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.showmenu .crossmenu {
-    font-size: 42px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 10px;
-    text-decoration: none;
-    color: #f3f3f3;
-    -webkit-transition: all 0.3s linear;
-    transition: all 0.3s linear;
-}
-
-.showmenu .crossmenu:hover {
-    color: black;
-}
-
-.showmenu .menuitems {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.showmenu .menuitems a {
-    padding: 15px;
-    color: black;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-.showmenu .menuitems a:hover {
-    color: black;
-    background-color: #f6f6f6;
-}
 
 /* for input */
 
@@ -167,7 +59,7 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin: 10px;
+    margin: 20px;
 }
 
 .input input {
@@ -233,7 +125,7 @@
 }
 
 .paidbill {
-    padding: 10px;
+    padding: 20px;
     height: 50px;
     border: none;
     outline: none;
@@ -297,14 +189,7 @@
     overflow-y: hidden;
 }
 
-.bar12 {
-    position: relative;
-    height: 2px;
-    width: 500px;
-    margin: 0 auto;
-    background: #fff;
-    margin-top: 150px;
-}
+
 
 
 
