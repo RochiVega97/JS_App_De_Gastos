@@ -279,7 +279,7 @@
 }
 
 .myflex {
-    margin-left: 20px;
+    margin-left: 200px;
 }
 
 
@@ -306,24 +306,6 @@
     margin-top: 150px;
 }
 
-.circle12 {
-    position: absolute;
-    top: -30px;
-    margin-left: -30px;
-    height: 60px;
-    width: 60px;
-    left: 0;
-    background: #fff;
-    border-radius: 30%;
-}
 
-.bar12 .circle12 p {
-    position: absolute;
-    top: -35px;
-    right: -85px;
-    text-transform: uppercase;
-    color: #347fc3;
-    font-family: helvetica, sans-serif;
-    font-weight: bold;
-}
+
 
