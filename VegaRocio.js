@@ -35,8 +35,9 @@ idForm.addEventListener('submit', (event)=>{
     idForm.reset()
     Swal.fire(
         'Genial!',
-        'Tu gasto fue agregado!',
-        'success'
+        'Tu gasto fue agregado!'
+        
+        
       )
 })
 
@@ -52,7 +53,7 @@ botonMostrarGastos.addEventListener('click',()=>{
                 <h5 class="card-title">${gastos.nombre}</h5>
                 <p class="card-text">Gasto: ${gastos.costo}</p>
                 <p class="card-text">Detalle: ${gastos.descripcion}</p>
-                <button class="btn btn-danger">Eliminar</button>
+                <button class="btn btn-danger BotonesEliminar">Eliminar</button>
             </div>
         </div>
         ` 
@@ -71,11 +72,25 @@ botonMostrarGastos.addEventListener('click',()=>{
             gastos_array.splice(indice,1)
             localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
 
+            Toastify({
+                text: "Se ha eliminado el gasto",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+
         })
     })
     
 })
-  
 
 let darkMode
 (localStorage.getItem('darkMode'))? darkMode=localStorage.getItem("darkMode"): localStorage.setItem('darkMode','light')
