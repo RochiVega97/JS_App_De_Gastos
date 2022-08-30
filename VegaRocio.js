@@ -28,7 +28,7 @@ const botonDarkMode=document.getElementById("botonDarkMode")
 idForm.addEventListener('submit', (event)=>{
     event.preventDefault()
     const datForm= new FormData(event.target)
-    const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto") ?? 0,datForm.get("desc"))
+    const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto"),datForm.get("desc"))
    
     gastos_array.push(spend)
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
@@ -39,6 +39,7 @@ botonMostrarGastos.addEventListener('click',()=>{
     const gastosStor=JSON.parse(localStorage.getItem('gastos_array'))
     List.innerHTML =""
     gastosStor.forEach((gastos,indice) => {
+        gastos.costo=gastos?.costo ?? 0
         List.innerHTML += `
         
         <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
@@ -97,12 +98,14 @@ let suma = 0
 let cont=0
 let Valores=0
 function splitBills(Montos) {
-    suma += Montos ?? 0
+    (isNaN(Montos)) ? Montos = 0: Montos
+    suma += Montos
     cont++
     Valores = suma / cont
     return Valores, suma
 }
 function restaGasto(Montos) {
+    (isNaN(Montos)) ? Montos = 0: Montos
     suma = suma - Montos
     cont=cont-1
     Valores = suma / cont
