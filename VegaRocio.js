@@ -33,6 +33,11 @@ idForm.addEventListener('submit', (event)=>{
     gastos_array.push(spend)
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
     idForm.reset()
+    Swal.fire(
+        'Genial!',
+        'Tu gasto fue agregado!',
+        'success'
+      )
 })
 
 botonMostrarGastos.addEventListener('click',()=>{
