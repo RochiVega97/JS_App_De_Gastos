@@ -28,7 +28,7 @@ const botonDarkMode=document.getElementById("botonDarkMode")
 idForm.addEventListener('submit', (event)=>{
     event.preventDefault()
     const datForm= new FormData(event.target)
-    const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto"),datForm.get("desc"))
+    const spend= new claseGastos(datForm.get("nombre"),datForm.get("gasto") ?? 0,datForm.get("desc"))
    
     gastos_array.push(spend)
     localStorage.setItem('gastos_array',JSON.stringify(gastos_array))
@@ -93,11 +93,11 @@ botonLightMode.addEventListener('click',()=>{
 })
 
 
-suma = 0
-cont=0
-Valores=0
+let suma = 0
+let cont=0
+let Valores=0
 function splitBills(Montos) {
-    suma = suma + Montos
+    suma += Montos ?? 0
     cont++
     Valores = suma / cont
     return Valores, suma
