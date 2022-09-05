@@ -86,7 +86,7 @@ botonMostrarGastos.addEventListener('click',()=>{
                     onClick: function(){} // Callback after click
                   }).showToast();
 
-            },900)
+            },90)
         
         })
     })
