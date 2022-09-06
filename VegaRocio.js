@@ -139,7 +139,9 @@ function printComment() {
 
 fetch('https://criptoya.com/api/dolar')
 .then(response => response.json())
-.then(dolar =>console.log(dolar))
+.then(({solidario, ccl, ccb, blue}) =>{
+    console.log(solidario, ccl, ccb, blue)
+})
 
 
 
