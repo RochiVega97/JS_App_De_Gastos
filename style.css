@@ -190,6 +190,43 @@
 }
 
 
+/*Tarjetas dolar*/
+.dolar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: rgb(0, 141, 235);
+}
+
+.dolar .card-body {
+    padding: 11px;
+}
+
+.dolar .card-title {
+    text-align: center;
+    color: #fafafa;
+}
+
+.dolar .compra-venta {
+    background-color: #fafafa;
+}
+
+.dolar .card-text {
+    margin: 0px;
+}
+
+.dolar .precio {
+    margin-bottom: 10px;
+}
+
+.dolar .card-subtitle {
+    color: #fafafa;
+    background-color: rgb(0, 0, 0);
+}
+
+.dolar .fecha {
+    color: #fafafa;
+}
 
 
 
