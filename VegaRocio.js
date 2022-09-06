@@ -137,10 +137,16 @@ function printComment() {
     List.appendChild(newComment)
 }
 
+const divDolar=document.getElementById('divDolar')
 fetch('https://criptoya.com/api/dolar')
 .then(response => response.json())
 .then(({solidario, ccl, ccb, blue}) =>{
-    console.log(solidario, ccl, ccb, blue)
+    divDolar.innerHTML=`
+        <p>Solidario: $${solidario}</p>
+        <p>CCL: $${ccl}</p>
+        <p>CCB: $${ccb}</p>
+        <p>Blue: $${blue}</p>
+    `
 })
 
 
