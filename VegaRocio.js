@@ -137,6 +137,9 @@ function printComment() {
     List.appendChild(newComment)
 }
 
+fetch('https://criptoya.com/api/dolar')
+.then(response => response.json())
+.then(dolar =>console.log(dolar))
 
 
 
