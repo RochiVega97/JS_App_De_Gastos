@@ -51,7 +51,7 @@ botonMostrarGastos.addEventListener('click',()=>{
         <div class="card" id="gasto${indice}" style="width: 18rem;margin:5px">
             <div class="card-body">
                 <h5 class="card-title">${gastos.nombre}</h5>
-                <p class="card-text">Gasto: ${gastos.costo}</p>
+                <p class="card-text">Gasto: U$D ${gastos.costo}</p>
                 <p class="card-text">Detalle: ${gastos.descripcion}</p>
                 <button class="btn btn-danger BotonesEliminar">Eliminar</button>
             </div>
@@ -133,7 +133,7 @@ function restaGasto(Montos) {
     return Valores, suma
 }
 function printComment() {
-    newComment.innerHTML = '<p style="background-color: #D3DEDC; padding-left:16px;">Total: $' + suma + '<br> A cada uno le toca: $' + Valores +'</p>'
+    newComment.innerHTML = '<p style="background-color: #D3DEDC; padding-left:16px;">Total: U$D ' + suma + '<br> A cada uno le toca: U$D ' + Valores +'</p>'
     List.appendChild(newComment)
 }
 
