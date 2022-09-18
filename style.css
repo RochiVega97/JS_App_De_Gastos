@@ -11,22 +11,32 @@
     font-family: 'Roboto', sans-serif;
     color:black;
     transition: 1s ease;
+    height: 95%;
 }
 .darkMode {
     background-color:black ;
+    height: 95%;
     font-family: 'Roboto', sans-serif;
-    color:rgb(235, 235, 240)
+    height: auto;
+    margin: auto;
 }
 
-
-/* for input */
-
 .inputTotal {
+    padding-top: 2%;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    /* background-color: white;*/
+    background: linear-gradient(to bottom, #6bffc8 0%, #42c8cb 100%);
+    border-radius: 20px;
     margin-top: 80px;
     padding: 20px;
     text-transform: capitalize;
     text-align: center;
-}
+  }
+/* for input */
+
+
 
 .personinfo {
     padding: 20px;
